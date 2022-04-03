@@ -46,29 +46,49 @@
         height: 100px;
         border: 1px solid black;
         text-align: center;
+        color: rgba(240, 248, 255, 0.37);
         font-size: 50px;
         font-weight: bold;
         background-color: rgb(255, 221, 221);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
     }
-
     
 </style>
 <script>
-    let change=false
-     $('#1')[0].innerHTML=" ";
-     $('#5')[0].innerHTML=" ";
-     $('#9')[0].innerHTML=" ";
+        let change=false
+        let color="color: rgba(240, 248, 255, 0.37)"
+        $('#1')[0].innerHTML="1";
+        $('#2')[0].innerHTML="2";
+        $('#3')[0].innerHTML="3";
+        $('#4')[0].innerHTML="4";
+        $('#5')[0].innerHTML="5";
+        $('#6')[0].innerHTML="6";
+        $('#7')[0].innerHTML="7";
+        $('#8')[0].innerHTML="8";
+        $('#9')[0].innerHTML="9";
+  
 
  document.querySelector("table").addEventListener("click", function(){
+     
     change=!change;
+   
     let x = event.target;
+    if(change||!change){
+        x.style.backgroundColor="red";
+        x.style.color="white";
+    }
     x.innerHTML=change?"X":"O";
+    
     $('#1')[0].innerHTML===$('#2')[0].innerHTML&&$('#3')[0].innerHTML===$('#1')[0].innerHTML||
     $('#4')[0].innerHTML===$('#5')[0].innerHTML&&$('#6')[0].innerHTML===$('#4')[0].innerHTML||
     $('#7')[0].innerHTML===$('#8')[0].innerHTML&&$('#9')[0].innerHTML===$('#7')[0].innerHTML||
     $('#1')[0].innerHTML===$('#9')[0].innerHTML&&$('#5')[0].innerHTML===$('#9')[0].innerHTML||
+    $('#1')[0].innerHTML===$('#4')[0].innerHTML&&$('#1')[0].innerHTML===$('#7')[0].innerHTML||
+    $('#2')[0].innerHTML===$('#5')[0].innerHTML&&$('#2')[0].innerHTML===$('#8')[0].innerHTML||
+    $('#3')[0].innerHTML===$('#6')[0].innerHTML&&$('#3')[0].innerHTML===$('#9')[0].innerHTML||
     $('#3')[0].innerHTML===$('#7')[0].innerHTML&&$('#5')[0].innerHTML===$('#7')[0].innerHTML    ?
+    
     ganador()
     
     :null;  
@@ -77,7 +97,8 @@
 
  const ganador=()=>{
 
-      alert("GanadorXXX");
+      change?alert("Ganador jugador 1"):alert("Ganador jugador 2");
+      
  }
 </script>    
 
